@@ -1,0 +1,52 @@
+.hero {
+  text-align: center;
+  padding: 150px 40px;
+  background-color: #1a1a1a;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: 5rem;
+  margin-bottom: 40px;
+  font-weight: bold;
+  line-height: 1.1;
+  letter-spacing: 2px;
+}
+
+.hero h1 .white {
+  color: #fff;
+  display: block;
+}
+
+.hero h1 .orange {
+  color: #FFA500;
+  display: block;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 50px;
+  color: #e0e0e0;
+  letter-spacing: 0.5px;
+  max-width: 600px;
+}
+
+.btn-primary {
+  padding: 18px 50px;
+  font-size: 14px;
+  background-color: #FFA500;
+  color: #000;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #FF8C00;
+}
