@@ -1,4 +1,5 @@
 import './Header.css'
+import { NavLink } from 'react-router-dom'
 
 function Header() {
   return (
@@ -6,8 +7,8 @@ function Header() {
       <div className="header-container">
         <div className="logo">URBAN THREADS</div>
         <nav className="nav">
-          <a href="#inicio">Inicio</a>
-          <a href="#productos">Productos</a>
+          <NavLink to="/">Inicio</NavLink>
+          <NavLink to="/productos">Productos</NavLink>
           <a href="#contacto">Contacto</a>
         </nav>
       </div>

@@ -1,39 +1,122 @@
 import './Features.css'
 
+const products = [
+  {
+    name: 'Camiseta Basica Urban',
+    description: 'Algodon 100% organico',
+    price: '€29',
+    icon: 'user',
+  },
+  {
+    name: 'Jeans Slim Fit',
+    description: 'Denim premium stretch',
+    price: '€89',
+    icon: 'pants',
+  },
+  {
+    name: 'Sudadera Oversize',
+    description: 'Algodon French Terry',
+    price: '€65',
+    icon: 'hoodie',
+  },
+  {
+    name: 'Chaqueta Bomber',
+    description: 'Nylon resistente al agua',
+    price: '€120',
+    icon: 'bag',
+  },
+  {
+    name: 'Gorra Snapback',
+    description: 'Bordado premium',
+    price: '€35',
+    icon: 'globe',
+  },
+  {
+    name: 'Zapatillas Urban',
+    description: 'Suela de goma antideslizante',
+    price: '€95',
+    icon: 'clock',
+  },
+]
+
+function ProductIcon({ icon }) {
+  if (icon === 'user') {
+    return (
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <circle cx="32" cy="20" r="8" />
+        <path d="M16 46c3-8 10-12 16-12s13 4 16 12" />
+      </svg>
+    )
+  }
+
+  if (icon === 'pants') {
+    return (
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <rect x="16" y="16" width="14" height="32" rx="4" />
+        <rect x="34" y="16" width="14" height="32" rx="4" />
+      </svg>
+    )
+  }
+
+  if (icon === 'hoodie') {
+    return (
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <path d="M18 50V26l7-8h14l7 8v24" />
+        <path d="M26 34c2-3 4-4 6-4s4 1 6 4" />
+      </svg>
+    )
+  }
+
+  if (icon === 'bag') {
+    return (
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <path d="M20 24h24l-3 26H23l-3-26z" />
+        <path d="M26 24v-6h12v6" />
+      </svg>
+    )
+  }
+
+  if (icon === 'globe') {
+    return (
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <circle cx="32" cy="32" r="16" />
+        <path d="M16 32h32M32 16v32M21 21c4 3 18 3 22 0M21 43c4-3 18-3 22 0" />
+      </svg>
+    )
+  }
+
+  return (
+    <svg viewBox="0 0 64 64" aria-hidden="true">
+      <circle cx="32" cy="32" r="16" />
+      <path d="M32 24v9l6 5" />
+    </svg>
+  )
+}
+
 function Features() {
   return (
     <section id="productos" className="features">
-      <div className="feature">
-        <div className="feature-icon">
-          <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 28C12 28 10 24 14 20C18 16 22 18 24 20" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-            <path d="M28 16L32 12M32 12L36 16M32 12V20" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-            <circle cx="20" cy="32" r="3" fill="white"/>
-            <circle cx="14" cy="36" r="2.5" fill="white"/>
-            <circle cx="26" cy="36" r="2.5" fill="white"/>
-          </svg>
+      <div className="products-shell">
+        <h2 className="products-title">NUESTRA COLECCIÓN</h2>
+        <p className="products-subtitle">Estilo urbano para cada ocasión</p>
+
+        <div className="products-grid">
+          {products.map((product) => (
+            <article key={product.name} className="product-card">
+              <div className="product-image">
+                <ProductIcon icon={product.icon} />
+              </div>
+              <div className="product-content">
+                <h3>{product.name}</h3>
+                <p>{product.description}</p>
+                <div className="product-bottom">
+                  <span>{product.price}</span>
+                  <button type="button">ANADIR</button>
+                </div>
+              </div>
+            </article>
+          ))}
         </div>
-        <h2>DISEÑO ÚNICO</h2>
-        <p>Piezas exclusivas con estética urbana y minimalista</p>
-      </div>
-      <div className="feature">
-        <div className="feature-icon">
-          <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="25" cy="25" r="16" stroke="white" strokeWidth="2"/>
-            <path d="M19 25L23 29L31 21" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        </div>
-        <h2>CALIDAD PREMIUM</h2>
-        <p>Materiales de alta calidad para máxima durabilidad</p>
-      </div>
-      <div className="feature">
-        <div className="feature-icon">
-          <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M25 10L30 22H43L32 29L37 41L25 34L13 41L18 29L7 22H20L25 10Z" stroke="white" strokeWidth="2" strokeLinejoin="round"/>
-          </svg>
-        </div>
-        <h2>ENVÍO RÁPIDO</h2>
-        <p>Entrega express en 24-48 horas</p>
       </div>
     </section>
   )
