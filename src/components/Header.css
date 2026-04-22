@@ -1,5 +1,5 @@
 .header {
-  background-color: #2a2a2a;
+  background-color: #1B1A1A;
   padding: 20px 0;
   display: flex;
   justify-content: center;
@@ -35,21 +35,53 @@
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.5px;
-  transition: color 0.3s ease, border-bottom 0.3s ease;
-  border-bottom: 2px solid transparent;
+  transition: color 0.3s ease;
   padding-bottom: 5px;
   position: relative;
 }
 
 .nav a.active {
-  border-bottom: 2px solid #FFA500;
+  color: #fff;
+}
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background-color: #FFA500;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.28s ease;
 }
 
 .nav a:hover {
-  color: #FFA500;
-  border-bottom: 2px solid #FFA500;
+  color: #fff;
 }
 
-.nav a:hover {
-  color: #FFA500;
+.nav a:hover::after,
+.nav a:focus-visible::after {
+  transform: scaleX(1);
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 22px 0 16px;
+  }
+
+  .header-container {
+    justify-content: center;
+    padding: 0;
+  }
+
+  .logo {
+    position: relative;
+    top: 4px;
+  }
+
+  .nav {
+    display: none;
+  }
 }

@@ -16,7 +16,7 @@
   letter-spacing: 0.4px;
   color: #111a2b;
   margin: 0;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .products-subtitle {
@@ -30,7 +30,7 @@
 
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(170px, 1fr));
+  grid-template-columns: repeat(4, minmax(190px, 1fr));
   gap: 28px 24px;
 }
 
@@ -47,7 +47,7 @@
 }
 
 .product-image {
-  height: 248px;
+  height: 280px;
   background-color: #dddde3;
   display: flex;
   align-items: center;
@@ -55,8 +55,8 @@
 }
 
 .product-image svg {
-  width: 74px;
-  height: 74px;
+  width: 104px;
+  height: 104px;
   fill: none;
   stroke: #a6a8b2;
   stroke-width: 2.3;
@@ -65,20 +65,20 @@
 }
 
 .product-content {
-  padding: 12px 18px 14px;
+  padding: 14px 18px 16px;
 }
 
 .product-content h3 {
   margin: 0;
-  font-size: 17px;
+  font-size: 19px;
   line-height: 1.2;
   color: #0f1523;
   font-weight: 600;
 }
 
 .product-content p {
-  margin: 6px 0 12px;
-  font-size: 14px;
+  margin: 7px 0 13px;
+  font-size: 15px;
   line-height: 1.2;
   color: #4f5058;
 }
@@ -90,8 +90,8 @@
 }
 
 .product-bottom span {
-  font-size: 33px;
-  font-weight: 800;
+  font-size: 25px;
+  font-weight: 700;
   color: #0e1422;
 }
 
@@ -99,10 +99,10 @@
   border: none;
   background-color: #10192a;
   color: #ffffff;
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 700;
   letter-spacing: 0.4px;
-  padding: 8px 14px;
+  padding: 10px 16px;
   cursor: pointer;
 }
 
@@ -116,19 +116,20 @@
   }
 
   .product-content h3 {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .product-content p {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .product-bottom span {
-    font-size: 28px;
+    font-size: 29px;
+    font-weight: 700;
   }
 
   .product-bottom button {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 
@@ -136,10 +137,20 @@
   .products-grid {
     grid-template-columns: repeat(2, minmax(160px, 1fr));
   }
+
+  .product-image svg {
+    width: 112px;
+    height: 112px;
+  }
 }
 
 @media (max-width: 560px) {
   .products-grid {
     grid-template-columns: 1fr;
+  }
+
+  .product-image svg {
+    width: 120px;
+    height: 120px;
   }
 }
